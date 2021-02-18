@@ -72,6 +72,13 @@ int main()
 			}while(done==' ');
 		}
 		else if(input==5){
+
+			if (first_move == 2) {
+
+				computer_move_5X5();
+				disp_matrix_5X5 ();
+			}
+
 			do{
 				player_move();															
 				disp_matrix_5X5();															
@@ -88,6 +95,13 @@ int main()
 			}while(done==' ');
 		}
         else if(input==7){
+
+			if (first_move == 2) {
+
+				computer_move_7X7();
+				disp_matrix_7X7 ();
+			}
+
 			do{
 				player_move();																
 				disp_matrix_7X7();															
@@ -137,14 +151,23 @@ int main()
 	}
 }
 
-// Menampilkan About
+/*Program : About.c
+* Deskripsi : Menampilkan penjelasan permainan dan author.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 26 - januari - 2021 / 1 
+*/
+
 char about()
 {
 	system("cls");
-	printf("\n\t Game Tic Tac Toe adalah game dimana\n\t player harus menderetkan nilai O/X\n\t sebaanyak 3 deret untuk ukuran papan\n\t 3x3, 4 deret untuk papan ukuran 5x5, dan 5 deret untuk papan ukuran 7x7,\n\t mau itu horizontal, vertikal, maupun diagonal\n\n\t Game ini dibuat oleh Fadhil Muhammad");
+	printf("\n\t Game Tic Tac Toe adalah game dimana\n\t player harus menderetkan nilai O/X\n\t sebanyak 3 deret untuk ukuran papan\n\t 3x3, 4 deret untuk papan  5x5, dan 5 deret untuk papan 7x7,\n\t mau itu horizontal, vertikal, maupun diagonal\n\n\t Game ini dibuat oleh Fadhil Muhammad");
 }
 
-// Penentuan matriks
+/*Program : initmarix.c
+* Deskripsi : Memberikan char kosong pada papan permainan
+* Nama : Rajibds
+* tanggal/ versi : 19 - januari - 2021 / 1 
+*/
 
 void init_matrix(int n)																	
 {
@@ -155,7 +178,11 @@ void init_matrix(int n)
 
 }
 
-// Gerakan Player
+/*Program : PlayerMove.c
+* Deskripsi : Pergerakan player atau pemain.
+* Nama : Rajibds
+* tanggal/ versi : 19 - januari - 2021 / 1 
+*/
 
 void player_move()
 {
@@ -173,7 +200,11 @@ void player_move()
 	printf("\n\n\n");
 }
 
-// Gerakan Komputer
+/*Program : ComputerMove3x3.c
+* Deskripsi : Pergerakan Komputer pada papan 3x3.
+* Nama : Rajibds
+* tanggal/ versi : 19 - januari - 2021 / 1 
+*/
 
 void computer_move_3X3()
 {
@@ -361,7 +392,11 @@ void computer_move_3X3()
 		
 }
 
-// Menampilkan ukuran papan 3x3.
+/*Program : DispMatrix3x3.c
+* Deskripsi : Menampilkan papan permainan 3x3.
+* Nama : Rajibds
+* tanggal/ versi : 19 - januari - 2021 / 1
+*/
 
 void disp_matrix_3X3()
 { 
@@ -376,7 +411,11 @@ void disp_matrix_3X3()
 	printf("\n\n");
 }
 
-// Pemeriksaan bila ada yang menang
+/*Program : Check3x3.c
+* Deskripsi : Pemeriksaan apakah sudah memenuhi persyaratan untuk menang, kalah, atau seri pada papan permainan 3x3.
+* Nama : Rajibds
+* tanggal/ versi : 19 - januari - 2021 / 1 
+*/
 
 char check_3X3()
 {
@@ -416,7 +455,11 @@ char check_3X3()
 	return 'D';
 }
 
-// Gerak Komputer
+/*Program : ComputerMove5x5.c
+* Deskripsi : Pergerakan Komputer pada papan 5x5.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 19 - januari - 2021 sampai 06 - februari - 2021 / 2
+*/
 
 void computer_move_5X5()
 {
@@ -1319,7 +1362,11 @@ void computer_move_5X5()
 
 }
 
-// Menampilkan papan permainan 5x5.
+/*Program : DispMatrix5x5.c
+* Deskripsi : Menampilkan papan permainan 5x5.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 19 - januari - 2021 / 1
+*/
 
 void disp_matrix_5X5()
 {
@@ -1334,7 +1381,11 @@ void disp_matrix_5X5()
 	printf("\n\n");
 }
 
-// Bila ada yang menang.
+/*Program : Check5x5.c
+* Deskripsi : Pemeriksaan apakah sudah memenuhi persyaratan untuk menang, kalah, atau seri pada papan permainan 5x5.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 23 - januari - 2021 / 1 
+*/
 
 char check_5X5()
 {
@@ -1407,6 +1458,12 @@ char check_5X5()
 
 	return 'D';
 }
+
+/*Program : ComputerMove7x7.c
+* Deskripsi : Pergerakan Komputer pada papan 7x7.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 06 - Februari - 2021 / 1
+*/
 
 void computer_move_7X7()
 {
@@ -2000,7 +2057,7 @@ void computer_move_7X7()
 		}
 	}
 
-	// // Jika papan 1, 3, dan 4 adalah 'X' atau 'O' maka papan 2 atau 5 adalah 'O'
+	// Jika papan 1, 3, dan 4 adalah 'X' atau 'O' maka papan 2 atau 5 adalah 'O'
 	for(i=0;i<7;i++){
 
 		if((matrix[0][i]=='X'&& matrix[2][i]=='X')||(matrix[2][i]=='X'&& matrix[3][i]=='X')){									
@@ -2029,7 +2086,7 @@ void computer_move_7X7()
 		}
 	}
 
-	// // Jika papan 1, 3, dan 5 adalah 'X' atau 'O' maka papan 2 atau 4 adalah 'O'
+	// Jika papan 1, 3, dan 5 adalah 'X' atau 'O' maka papan 2 atau 4 adalah 'O'
 	for(i=0;i<7;i++){
 
 		if((matrix[0][i]=='X'&& matrix[2][i]=='X')||(matrix[2][i]=='X'&& matrix[4][i]=='X')){									
@@ -2058,7 +2115,7 @@ void computer_move_7X7()
 		}
 	}
 
-	// // Jika papan 1, 4, dan 5 adalah 'X' atau 'O' maka papan 2 atau 3 adalah 'O'
+	// Jika papan 1, 4, dan 5 adalah 'X' atau 'O' maka papan 2 atau 3 adalah 'O'
 	for(i=0;i<7;i++){
 
 		if((matrix[0][i]=='X'&& matrix[3][i]=='X')||(matrix[3][i]=='X'&& matrix[4][i]=='X')){									
@@ -2087,7 +2144,7 @@ void computer_move_7X7()
 		}
 	}
 
-	// // Jika papan 2, 3, dan 4 adalah 'X' atau 'O' maka papan 1 atau 5 adalah 'O'
+	// Jika papan 2, 3, dan 4 adalah 'X' atau 'O' maka papan 1 atau 5 adalah 'O'
 	for(i=0;i<7;i++){
 
 		if((matrix[1][i]=='X'&& matrix[2][i]=='X')||(matrix[2][i]=='X'&& matrix[3][i]=='X')){									
@@ -2665,7 +2722,11 @@ void computer_move_7X7()
 
 }
 
-// Menampilkan papan permainan 7x7.
+/*Program : DispMatrix7x7.c
+* Deskripsi : Menampilkan papan permainan 7x7.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 06 - januari - 2021 / 1
+*/
 
 void disp_matrix_7X7()
 {
@@ -2680,7 +2741,11 @@ void disp_matrix_7X7()
 	printf("\n\n");
 }
 
-// Pengecekan bila ada yang menang
+/*Program : Check7x7.c
+* Deskripsi : Pemeriksaan apakah sudah memenuhi persyaratan untuk menang, kalah, atau seri pada papan permainan 7x7.
+* Nama : Fadhil Muhammad
+* tanggal/ versi : 06 - Februari - 2021 / 1 
+*/
 
 char check_7X7()
 {
