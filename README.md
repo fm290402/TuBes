@@ -1,2 +1,2 @@
 # TuBes
-File2 yang digunakan untuk tubes
+daftar source code yang digunakan dalam pengerjain tugas besar ini.
