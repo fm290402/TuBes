@@ -1,2 +1,2 @@
 # TuBes
-daftar source code yang digunakan dalam pengerjain tugas besar ini.
+data source code yang digunakan dalam pengerjain tugas besar ini.
